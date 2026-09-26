@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Checkout | SK TABII</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .checkout-section { padding: 80px 0; }
+        .checkout-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; font-family: var(--font-body); }
+        .checkout-summary { background: var(--mint-cream); padding: 30px; border-radius: 8px; align-self: start; }
+        .summary-item { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .summary-total { display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 600; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px; margin-top: 15px; }
+        @media (max-width: 768px) { .checkout-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="topbar">Free delivery on premium selections • Pure Natural Goodness</div>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-text">SK TABII</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="checkout-section">
+        <div class="container">
+            <h1 class="section-title" style="margin-bottom: 40px;">Checkout</h1>
+            <div class="checkout-grid">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Shipping Information</h3>
+                    <form onsubmit="event.preventDefault(); alert('Order placed successfully!'); window.location.href='index.html';">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" required>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Postal Code</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 20px; margin-top: 40px;">Payment</h3>
+                        <div class="form-group">
+                            <label>Card Number</label>
+                            <input type="text" placeholder="XXXX XXXX XXXX XXXX" required>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label>Expiry Date</label>
+                                <input type="text" placeholder="MM/YY" required>
+                            </div>
+                            <div class="form-group">
+                                <label>CVV</label>
+                                <input type="text" placeholder="123" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Place Order</button>
+                    </form>
+                </div>
+                
+                <div class="checkout-summary">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Order Summary</h3>
+                    <div class="summary-item">
+                        <span>Premium Medjool Dates</span>
+                        <span>₹850</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span>Free</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span>₹850</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px 0; color: var(--text-light);">
+            &copy; 2026 SK TABII. All rights reserved.
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="SK TABII — Premium natural foods, dates, nuts, dry fruits, and organic products.">
-    <title>Home — SK TABII</title>
+    <meta name="description" content="Discover premium dates, nuts, dry fruits, roasted snacks, makhana, healthy mixes and thoughtful gifting from SK TABII.">
+    <title>SK TABII | Premium Dates, Nuts, Dry Fruits & Natural Foods</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,9 +18,10 @@
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="shop.html">Shop</a>
-                <a href="shop.html?cat=dates">Dates</a>
-                <a href="shop.html?cat=nuts">Nuts</a>
-                <a href="shop.html?cat=gifting">Gifting</a>
+                <a href="category.html?type=dates">Dates</a>
+                <a href="category.html?type=nuts">Nuts</a>
+                <a href="category.html?type=dry_fruits">Dry Fruits</a>
+                <a href="category.html?type=gifting">Gifting</a>
                 <a href="about.html">Our Story</a>
             </div>
             <div class="nav-actions">
@@ -38,307 +39,184 @@
         </div>
     </nav>
     <div id="mobileNav" class="mobile-nav-panel">
+        <button class="search-close" onclick="toggleMenu()" style="position:absolute; top:20px; right:20px;">×</button>
         <a href="index.html">Home</a>
         <a href="shop.html">Shop All</a>
-        <a href="shop.html?cat=dates">Dates</a>
-        <a href="shop.html?cat=nuts">Nuts</a>
+        <a href="category.html?type=dates">Dates</a>
+        <a href="category.html?type=nuts">Nuts</a>
+        <a href="category.html?type=dry_fruits">Dry Fruits</a>
+        <a href="category.html?type=roasted">Roasted</a>
+        <a href="category.html?type=makhana">Makhana</a>
+        <a href="category.html?type=mixes">Healthy Mixes</a>
+        <a href="category.html?type=gifting">Gifting</a>
         <a href="about.html">Our Story</a>
         <a href="contact.html">Contact</a>
     </div>
-    <div id="searchBar">
+    
+    <div id="searchOverlay" class="search-overlay">
         <button class="search-close" onclick="toggleSearch()">×</button>
-        <input type="text" id="siteSearch" placeholder="Search premium dates, nuts..." onkeydown="globalSearch(event)">
+        <div class="search-input-wrap">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search premium dates, nuts...">
+        </div>
     </div>
+
     
-    <main>
-    
-<section class="hero texture-paper">
-    <div class="container hero-content">
-        <div class="hero-badge">EST. WITH A PASSION FOR NATURE</div>
-        <h1>Pure. Natural.<br><span class="gold">Wholesome.</span></h1>
-        <p>Premium dates, nuts, dry fruits and natural goodness, carefully selected for everyday indulgence.</p>
-        <div class="hero-actions">
-            <a href="shop.html" class="btn btn-gold">Explore Collection</a>
-            <a href="about.html" class="btn btn-outline-light">Our Story</a>
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Nature, Curated Beautifully.</h1>
+            <p class="hero-desc">Premium dates, nuts, dry fruits and wholesome foods — carefully selected for everyday indulgence and meaningful gifting.</p>
+            <div class="hero-actions">
+                <a href="shop.html" class="btn btn-primary">Explore the Collection</a>
+                <a href="#bestsellers" class="btn btn-secondary">Shop Best Sellers</a>
+            </div>
         </div>
-    </div>
-    <div class="hero-ornament">
-        <img src="https://images.unsplash.com/photo-1596647901047-7da354780517?q=80&w=1000&auto=format&fit=crop" alt="Premium Assortment">
-    </div>
-</section>
+        <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f0a?auto=format&fit=crop&q=80&w=1200');"></div>
+    </header>
 
-<section class="intro texture-paper">
-    <div class="container intro-grid">
-        <div class="intro-img">
-            <img src="https://images.unsplash.com/photo-1550828552-824c0d0a7931?q=80&w=1000&auto=format&fit=crop" alt="Premium Medjool Dates">
+    <section class="categories">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Explore the Goodness</h2>
+                <p class="section-subtitle">From everyday favourites to indulgent discoveries.</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card" onclick="location.href='category.html?type=dates'">
+                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?auto=format&fit=crop&q=80&w=400" alt="Dates"></div>
+                    <span class="category-title">🌴 Dates</span>
+                </div>
+                <div class="category-card" onclick="location.href='category.html?type=nuts'">
+                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1599598425947-33002620dc06?auto=format&fit=crop&q=80&w=400" alt="Nuts"></div>
+                    <span class="category-title">🥜 Nuts</span>
+                </div>
+                <div class="category-card" onclick="location.href='category.html?type=dry_fruits'">
+                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?auto=format&fit=crop&q=80&w=400" alt="Dry Fruits"></div>
+                    <span class="category-title">🍇 Dry Fruits</span>
+                </div>
+                <div class="category-card" onclick="location.href='category.html?type=roasted'">
+                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1602932371900-514d02636a29?auto=format&fit=crop&q=80&w=400" alt="Roasted"></div>
+                    <span class="category-title">🔥 Roasted</span>
+                </div>
+                <div class="category-card" onclick="location.href='category.html?type=makhana'">
+                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1582283086772-273a3c94595e?auto=format&fit=crop&q=80&w=400" alt="Makhana"></div>
+                    <span class="category-title">🌱 Makhana</span>
+                </div>
+                <div class="category-card" onclick="location.href='category.html?type=mixes'">
+                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1579737829777-62aeb18d616d?auto=format&fit=crop&q=80&w=400" alt="Mixes"></div>
+                    <span class="category-title">💪 Mixes</span>
+                </div>
+                <div class="category-card" onclick="location.href='category.html?type=gifting'">
+                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=400" alt="Gifting"></div>
+                    <span class="category-title">🎁 Gifting</span>
+                </div>
+            </div>
         </div>
-        <div>
-            <div class="eyebrow">Premium Brand</div>
-            <h2>Nature, <br><span class="green">carefully chosen.</span></h2>
-            <p class="body-large" style="margin-top:30px;">SK TABII brings together premium dates, nuts, dry fruits and natural products selected with care. We believe that true luxury lies in the purity of ingredients, harvested respectfully from nature.</p>
-            <a href="about.html" class="btn-text" style="margin-top:30px;">Discover the Philosophy</a>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section class="category-section">
-    <div class="container">
-        <div class="section-header">
-            <div class="eyebrow">Curated Selection</div>
-            <h2>Explore Categories</h2>
+    <section class="trust-bar">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px; font-size: 2rem;">Pure by Nature. Chosen with Care.</h2>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <h4>✨ Natural</h4>
+                    <p>Carefully selected ingredients</p>
+                </div>
+                <div class="trust-item">
+                    <h4>💧 Pure</h4>
+                    <p>Quality-focused sourcing</p>
+                </div>
+                <div class="trust-item">
+                    <h4>🌾 Wholesome</h4>
+                    <p>Made for everyday goodness</p>
+                </div>
+                <div class="trust-item">
+                    <h4>🎁 Thoughtful</h4>
+                    <p>Beautifully curated for gifting</p>
+                </div>
+            </div>
         </div>
-        <div class="category-grid">
-            <a href="shop.html?cat=dates" class="cat-card">
-                <img src="images/cat_dates.jpg" class="cat-card-img" alt="Dates">
-                <div class="cat-card-content">
-                    <h3>Dates</h3>
-                    <p>Ajwa, Medjool and more.</p>
-                    <span class="btn-text" style="color:#fff; border-color:rgba(255,255,255,0.3)">Explore</span>
-                </div>
-            </a>
-            <a href="shop.html?cat=nuts" class="cat-card">
-                <img src="images/cat_nuts.jpg" class="cat-card-img" alt="Nuts">
-                <div class="cat-card-content">
-                    <h3>Nuts</h3>
-                    <p>Premium everyday crunch.</p>
-                    <span class="btn-text" style="color:#fff; border-color:rgba(255,255,255,0.3)">Explore</span>
-                </div>
-            </a>
-            <a href="shop.html?cat=dry-fruits" class="cat-card">
-                <img src="images/cat_dry_fruits.jpg" class="cat-card-img" alt="Dry Fruits">
-                <div class="cat-card-content">
-                    <h3>Dry Fruits</h3>
-                    <p>Wholesome sweetness.</p>
-                    <span class="btn-text" style="color:#fff; border-color:rgba(255,255,255,0.3)">Explore</span>
-                </div>
-            </a>
-            <a href="shop.html?cat=organic" class="cat-card">
-                <img src="https://images.unsplash.com/photo-1587049352847-4d4b124032d2?q=80&w=600&auto=format&fit=crop" class="cat-card-img" alt="Organic">
-                <div class="cat-card-content">
-                    <h3>Organic</h3>
-                    <p>Purely organic goodness.</p>
-                    <span class="btn-text" style="color:#fff; border-color:rgba(255,255,255,0.3)">Explore</span>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section class="products-section bg-cream">
-    <div class="container">
-        <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; text-align:left;">
+    <section id="bestsellers" class="products-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">The SK TABII Edit</h2>
+                <p class="section-subtitle">Our most-loved selection of premium natural goodness.</p>
+            </div>
+            <div id="bestsellers-grid" class="product-grid">
+                <!-- Products rendered via JS -->
+            </div>
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="shop.html" class="btn btn-secondary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-section feature-dark">
+        <div class="feature-content">
+            <h2 class="section-title">The Art of the Date</h2>
+            <p class="hero-desc" style="color: rgba(250,248,245,0.8)">From soft Medjool to revered Ajwa, discover carefully selected dates chosen for their flavour, texture and character.</p>
             <div>
-                <div class="eyebrow">Featured</div>
-                <h2 style="margin:0">The TABII Collection</h2>
-            </div>
-            <a href="shop.html" class="btn btn-outline">View All</a>
-        </div>
-        
-        <div class="product-grid" id="productGridFeatured">
-            <!-- Rendered by JS or statically here since it's just the homepage -->
-            <div class="product-card" data-cat="dates">
-                <div class="product-badge">Dates</div>
-                <a href="product.html?id=1" class="product-img-wrap"><img src="images/prod_1.jpg" alt="Medjool Dates"></a>
-                <div class="product-info">
-                    <h3><a href="product.html?id=1">Medjool Dates</a></h3>
-                    <p class="desc">Large, soft Medjool dates selected for premium gifting.</p>
-                    <div class="product-meta">
-                        <span class="product-price">₹849</span>
-                        <div class="product-actions">
-                            <button class="icon-btn-small" onclick="addToCart(1)" aria-label="Add to Cart"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8h12l1 13H5L6 8Zm3 0V6a3 3 0 0 1 6 0v2"></path></svg></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product-card" data-cat="nuts">
-                <div class="product-badge">Nuts</div>
-                <a href="product.html?id=2" class="product-img-wrap"><img src="images/prod_2.jpg" alt="California Almonds"></a>
-                <div class="product-info">
-                    <h3><a href="product.html?id=2">California Almonds</a></h3>
-                    <p class="desc">Crunchy, premium almonds for everyday nourishment.</p>
-                    <div class="product-meta">
-                        <span class="product-price">₹599</span>
-                        <div class="product-actions">
-                            <button class="icon-btn-small" onclick="addToCart(2)" aria-label="Add to Cart"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8h12l1 13H5L6 8Zm3 0V6a3 3 0 0 1 6 0v2"></path></svg></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product-card" data-cat="nuts">
-                <div class="product-badge">Nuts</div>
-                <a href="product.html?id=3" class="product-img-wrap"><img src="images/prod_3.jpg" alt="Pistachio Kernels"></a>
-                <div class="product-info">
-                    <h3><a href="product.html?id=3">Pistachio Kernels</a></h3>
-                    <p class="desc">Delicate pistachio kernels with a rich roasted profile.</p>
-                    <div class="product-meta">
-                        <span class="product-price">₹799</span>
-                        <div class="product-actions">
-                            <button class="icon-btn-small" onclick="addToCart(3)" aria-label="Add to Cart"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8h12l1 13H5L6 8Zm3 0V6a3 3 0 0 1 6 0v2"></path></svg></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product-card" data-cat="gifting">
-                <div class="product-badge">Gifting</div>
-                <a href="product.html?id=7" class="product-img-wrap"><img src="images/prod_7.jpg" alt="Signature Gift Box"></a>
-                <div class="product-info">
-                    <h3><a href="product.html?id=7">Signature Gift Box</a></h3>
-                    <p class="desc">A curated assortment of dates, nuts and dry fruits.</p>
-                    <div class="product-meta">
-                        <span class="product-price">₹1,499</span>
-                        <div class="product-actions">
-                            <button class="icon-btn-small" onclick="addToCart(7)" aria-label="Add to Cart"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8h12l1 13H5L6 8Zm3 0V6a3 3 0 0 1 6 0v2"></path></svg></button>
-                        </div>
-                    </div>
-                </div>
+                <a href="category.html?type=dates" class="btn btn-secondary">Explore Dates</a>
             </div>
         </div>
-    </div>
-</section>
+        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1603569283847-aa295f0d016a?auto=format&fit=crop&q=80&w=1200');"></div>
+    </section>
 
-<section class="heritage bg-green">
-    <div class="heritage-img"></div>
-    <div class="heritage-content texture-paper">
-        <div class="eyebrow" style="color:var(--gold);">From Nature. With Purpose.</div>
-        <h2 style="color:var(--ivory);">The Art of <br><span class="gold">Sourcing.</span></h2>
-        <p class="body-large" style="color:rgba(251,248,241,0.8); margin-top:20px; margin-bottom:40px;">Our story begins with a profound respect for nature. We travel the world to source the finest dates, crunchiest nuts, and purest organic ingredients, ensuring every product carries the hallmark of TABII quality.</p>
-        <a href="about.html" class="btn btn-outline-light" style="align-self:flex-start;">Read Our Story</a>
-    </div>
-</section>
+    <section class="feature-section reverse">
+        <div class="feature-content" style="background-color: var(--mint-cream);">
+            <h2 class="section-title">Gifts That Feel Thoughtful</h2>
+            <p class="hero-desc">Curated boxes filled with premium natural goodness. Discover everyday gifts, premium hampers, and corporate gifting.</p>
+            <div>
+                <a href="category.html?type=gifting" class="btn btn-primary">Explore Gifting</a>
+            </div>
+        </div>
+        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=1200');"></div>
+    </section>
 
-<section class="pillars">
-    <div class="container">
-        <div class="section-header">
-            <div class="eyebrow">Why SK TABII</div>
-            <h2>Quality in Every Detail</h2>
-        </div>
-        <div class="pillar-grid">
-            <div class="pillar">
-                <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                <h4>Premium Selection</h4>
-                <p>Only the finest grades chosen.</p>
-            </div>
-            <div class="pillar">
-                <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
-                <h4>Carefully Sourced</h4>
-                <p>Ethical global partnerships.</p>
-            </div>
-            <div class="pillar">
-                <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
-                <h4>Natural Goodness</h4>
-                <p>Pure ingredients, no compromises.</p>
-            </div>
-            <div class="pillar">
-                <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                <h4>Made for Gifting</h4>
-                <p>Elegant boxes for every occasion.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="date-experience texture-paper">
-    <div class="container">
-        <div class="section-header">
-            <div class="eyebrow" style="color:var(--gold);">Heritage</div>
-            <h2 style="color:var(--ivory);">The Art of the Date</h2>
-            <p style="color:rgba(251,248,241,0.8); max-width:600px;">Discover the rich, caramel notes of our Middle-Eastern inspired date collection, ranging from the revered Ajwa to the succulent Medjool.</p>
-        </div>
-        <div class="category-grid">
-            <div class="date-card">
-                <h3>Ajwa</h3>
-                <p>Revered, dark, with notes of prune and natural sweetness.</p>
-            </div>
-            <div class="date-card">
-                <h3>Medjool</h3>
-                <p>The 'King of Dates' — large, soft, and caramel-like.</p>
-            </div>
-            <div class="date-card">
-                <h3>Mabroom</h3>
-                <p>Firm, chewy, and naturally rich with a slender body.</p>
-            </div>
-            <div class="date-card">
-                <h3>Sukkari</h3>
-                <p>Melt-in-the-mouth texture with a golden sugary bite.</p>
-            </div>
-        </div>
-        <div style="text-align:center; margin-top:50px;">
-            <a href="shop.html?cat=dates" class="btn btn-gold">Explore Dates</a>
-        </div>
-    </div>
-</section>
-
-<section style="padding:100px 0; background:var(--white);">
-    <div class="container" style="text-align:center;">
-        <div class="eyebrow">Follow the TABII Journey</div>
-        <h2>@SKTABII</h2>
-        <div class="social-grid">
-            <img src="https://images.unsplash.com/photo-1596431934301-4470bc5e8354?w=500&auto=format&fit=crop" class="social-img">
-            <img src="https://images.unsplash.com/photo-1508061253366-f7da158b6d46?w=500&auto=format&fit=crop" class="social-img">
-            <img src="https://images.unsplash.com/photo-1600858591873-1081cb9f2a03?w=500&auto=format&fit=crop" class="social-img">
-            <img src="https://images.unsplash.com/photo-1550828552-824c0d0a7931?w=500&auto=format&fit=crop" class="social-img">
-        </div>
-    </div>
-</section>
-
-    </main>
     
-    <footer class="footer texture-paper">
+    <footer>
         <div class="container">
             <div class="footer-grid">
-                <div>
-                    <a href="index.html" class="logo footer-logo" style="color:var(--gold);">
-                        <span class="logo-text">SK TABII</span>
-                    </a>
-                    <p>Natural • Pure • Wholesome</p>
-                    <p style="margin-top:20px; font-size:13px; opacity:0.8;">Premium natural foods, dates, nuts, dry fruits, and gifting curated with a passion for nature.</p>
+                <div class="footer-col">
+                    <h2 class="logo-text" style="color: var(--warm-cream); margin-bottom: 20px;">SK TABII</h2>
+                    <p style="color: rgba(250,248,245,0.7); margin-bottom: 20px; max-width: 300px;">Premium Dates, Nuts, Dry Fruits & Natural Foods. Rooted in Nature. Made for Today.</p>
                 </div>
-                <div>
-                    <h3>Explore</h3>
+                <div class="footer-col">
+                    <h3>Shop</h3>
                     <ul class="footer-links">
-                        <li><a href="shop.html">Shop All</a></li>
-                        <li><a href="shop.html?cat=dates">Premium Dates</a></li>
-                        <li><a href="shop.html?cat=nuts">Nuts</a></li>
-                        <li><a href="shop.html?cat=dry-fruits">Dry Fruits</a></li>
-                        <li><a href="shop.html?cat=organic">Organic</a></li>
-                        <li><a href="shop.html?cat=gifting">Gifting</a></li>
+                        <li><a href="category.html?type=dates">Dates</a></li>
+                        <li><a href="category.html?type=nuts">Nuts</a></li>
+                        <li><a href="category.html?type=dry_fruits">Dry Fruits</a></li>
+                        <li><a href="category.html?type=roasted">Roasted</a></li>
+                        <li><a href="category.html?type=makhana">Makhana</a></li>
+                        <li><a href="category.html?type=mixes">Healthy Mixes</a></li>
+                        <li><a href="category.html?type=gifting">Gifting</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h3>Customer Care</h3>
+                <div class="footer-col">
+                    <h3>About</h3>
                     <ul class="footer-links">
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#">Shipping Information</a></li>
-                        <li><a href="#">Returns & Exchanges</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">FAQs</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="#">Quality</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h3>Join the TABII Journal</h3>
-                    <p style="font-size:13px;">Subscribe for fresh drops, seasonal gifting, and exclusive natural goodness.</p>
-                    <form class="newsletter-form" onsubmit="subscribe(event)">
-                        <input type="email" required placeholder="Enter your email">
-                        <button type="submit">Subscribe</button>
+                <div class="footer-col newsletter">
+                    <h3>A Little Goodness, Delivered.</h3>
+                    <p style="color: rgba(250,248,245,0.7); font-size: 0.9rem; margin-bottom: 15px;">Be the first to discover new collections and special offers.</p>
+                    <form onsubmit="event.preventDefault(); alert('Subscribed!');">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-accent">Join SK TABII</button>
                     </form>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                        <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>© 2026 SK TABII. Premium Natural Foods.</span>
-                <span>EST. WITH A PASSION FOR NATURE</span>
+                &copy; 2026 SK TABII. All rights reserved.
             </div>
         </div>
     </footer>
-    <div id="toast" class="toast"></div>
+
     <script src="app.js"></script>
-    
 </body>
 </html>

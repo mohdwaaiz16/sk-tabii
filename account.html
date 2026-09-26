@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Cart | SK TABII</title>
+    <title>Account | SK TABII</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .cart-section { padding: 60px 0; min-height: 50vh; }
-        .cart-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
-        .cart-table th, .cart-table td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.1); }
-        .cart-table th { font-weight: 600; color: var(--deep-forest); }
-        .cart-item-img { width: 80px; height: 80px; object-fit: cover; border-radius: 4px; vertical-align: middle; margin-right: 15px; }
-        .cart-summary { background: var(--mint-cream); padding: 30px; border-radius: 8px; margin-top: 30px; text-align: right; }
-        .cart-summary h3 { font-size: 1.5rem; margin-bottom: 20px; }
-        .cart-summary .btn { margin-top: 20px; }
+        .account-section { padding: 80px 0; }
+        .account-box { max-width: 500px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input { width: 100%; padding: 12px; border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; font-family: var(--font-body); }
+        .tabs { display: flex; gap: 20px; margin-bottom: 30px; border-bottom: 1px solid rgba(0,0,0,0.1); }
+        .tab { padding: 10px 0; cursor: pointer; color: var(--text-light); border-bottom: 2px solid transparent; }
+        .tab.active { color: var(--deep-forest); border-color: var(--deep-forest); font-weight: 500; }
     </style>
 </head>
 <body>
@@ -75,30 +75,25 @@
     </div>
 
     
-    <section class="cart-section">
+    <section class="account-section">
         <div class="container">
-            <h1 class="section-title">Your Cart</h1>
-            <table class="cart-table">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="cart-body">
-                    <tr>
-                        <td colspan="5" class="text-center">Cart is empty for this demo.</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="cart-summary">
-                <h3>Subtotal: ₹0</h3>
-                <p style="color: var(--text-light); font-size: 0.9rem;">Shipping and taxes calculated at checkout.</p>
-                <a href="checkout.html" class="btn btn-primary" onclick="return false;">Proceed to Checkout</a>
+            <div class="account-box">
+                <div class="tabs">
+                    <div class="tab active" onclick="alert('Login View')">Login</div>
+                    <div class="tab" onclick="alert('Signup View')">Sign Up</div>
+                </div>
+                <form onsubmit="event.preventDefault(); alert('Logged In!');">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+                    <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;"><a href="#">Forgot password?</a></p>
+                </form>
             </div>
         </div>
     </section>
@@ -148,27 +143,5 @@
     </footer>
 
     <script src="app.js"></script>
-    <script>
-        // Demo cart rendering logic can be added here
-        document.addEventListener('DOMContentLoaded', () => {
-            const cartBody = document.getElementById('cart-body');
-            const cartProduct = products[0];
-            cartBody.innerHTML = `
-                <tr>
-                    <td>
-                        <img src="${cartProduct.img}" class="cart-item-img" onerror="this.src='https://images.unsplash.com/photo-1596422846543-75c6fc197f0a?auto=format&fit=crop&q=80&w=800';">
-                        ${cartProduct.name}
-                    </td>
-                    <td>${cartProduct.price}</td>
-                    <td>
-                        <input type="number" value="1" min="1" style="width: 50px; padding: 5px;" onchange="alert('Quantity updated!')">
-                    </td>
-                    <td>${cartProduct.price}</td>
-                    <td><button style="border: none; background: none; cursor: pointer; color: red;" onclick="this.closest('tr').remove();">Remove</button></td>
-                </tr>
-            `;
-            document.querySelector('.cart-summary h3').textContent = 'Subtotal: ' + cartProduct.price;
-        });
-    </script>
 </body>
 </html>

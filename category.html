@@ -3,17 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Cart | SK TABII</title>
+    <title>Category | SK TABII</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .cart-section { padding: 60px 0; min-height: 50vh; }
-        .cart-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
-        .cart-table th, .cart-table td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.1); }
-        .cart-table th { font-weight: 600; color: var(--deep-forest); }
-        .cart-item-img { width: 80px; height: 80px; object-fit: cover; border-radius: 4px; vertical-align: middle; margin-right: 15px; }
-        .cart-summary { background: var(--mint-cream); padding: 30px; border-radius: 8px; margin-top: 30px; text-align: right; }
-        .cart-summary h3 { font-size: 1.5rem; margin-bottom: 20px; }
-        .cart-summary .btn { margin-top: 20px; }
+        .shop-header {
+            background-color: var(--mint-cream);
+            padding: 80px 0;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -75,30 +72,17 @@
     </div>
 
     
-    <section class="cart-section">
+    <header class="shop-header">
         <div class="container">
-            <h1 class="section-title">Your Cart</h1>
-            <table class="cart-table">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="cart-body">
-                    <tr>
-                        <td colspan="5" class="text-center">Cart is empty for this demo.</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="cart-summary">
-                <h3>Subtotal: ₹0</h3>
-                <p style="color: var(--text-light); font-size: 0.9rem;">Shipping and taxes calculated at checkout.</p>
-                <a href="checkout.html" class="btn btn-primary" onclick="return false;">Proceed to Checkout</a>
+            <h1 class="section-title" id="catTitle">Category</h1>
+            <p class="section-subtitle">Discover our complete collection of premium natural goodness.</p>
+        </div>
+    </header>
+
+    <section class="products-section" style="padding-top: 40px;">
+        <div class="container">
+            <div id="shop-grid" class="product-grid">
+                <!-- Products rendered via JS -->
             </div>
         </div>
     </section>
@@ -149,25 +133,40 @@
 
     <script src="app.js"></script>
     <script>
-        // Demo cart rendering logic can be added here
         document.addEventListener('DOMContentLoaded', () => {
-            const cartBody = document.getElementById('cart-body');
-            const cartProduct = products[0];
-            cartBody.innerHTML = `
-                <tr>
-                    <td>
-                        <img src="${cartProduct.img}" class="cart-item-img" onerror="this.src='https://images.unsplash.com/photo-1596422846543-75c6fc197f0a?auto=format&fit=crop&q=80&w=800';">
-                        ${cartProduct.name}
-                    </td>
-                    <td>${cartProduct.price}</td>
-                    <td>
-                        <input type="number" value="1" min="1" style="width: 50px; padding: 5px;" onchange="alert('Quantity updated!')">
-                    </td>
-                    <td>${cartProduct.price}</td>
-                    <td><button style="border: none; background: none; cursor: pointer; color: red;" onclick="this.closest('tr').remove();">Remove</button></td>
-                </tr>
-            `;
-            document.querySelector('.cart-summary h3').textContent = 'Subtotal: ' + cartProduct.price;
+            const urlParams = new URLSearchParams(window.location.search);
+            const type = urlParams.get('type') || 'all';
+            
+            document.getElementById('catTitle').textContent = type.charAt(0).toUpperCase() + type.slice(1).replace('_', ' ');
+            
+            let filtered = products;
+            if (type !== 'all') {
+                filtered = products.filter(p => p.category === type);
+            }
+            
+            const container = document.getElementById('shop-grid');
+            if (filtered.length === 0) {
+                container.innerHTML = '<p>No products found in this category.</p>';
+                return;
+            }
+            container.innerHTML = filtered.map(p => `
+                <div class="product-card">
+                    <a href="product.html?id=${p.id}" style="display:block; flex:1;">
+                        <img src="${p.img}" alt="${p.name}" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1596422846543-75c6fc197f0a?auto=format&fit=crop&q=80&w=800';">
+                    </a>
+                    <div class="product-info">
+                        <a href="product.html?id=${p.id}">
+                            <h3 class="product-title">${p.name}</h3>
+                        </a>
+                        <p class="product-desc">${p.desc}</p>
+                        <div class="product-weights">${p.weight}</div>
+                        <div class="product-bottom">
+                            <span class="product-price">${p.price}</span>
+                            <button class="btn-add" onclick="addToCart(${p.id})">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         });
     </script>
 </body>
