@@ -9,206 +9,347 @@
 </head>
 <body>
     
-    <div class="topbar">Free delivery on premium selections • Pure Natural Goodness</div>
-    <nav class="nav">
+    <div class="announcement-bar">
+        <span>Inspired by Turkey. Rooted in Nature.</span>
+        <span>Free Shipping on orders above ₹999</span>
+    </div>
+
+    <nav class="nav-overlay" id="mainNav">
         <div class="container nav-inner">
-            <a href="index.html" class="logo">
-                <span class="logo-text">SK TABII</span>
-            </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="category.html?type=dates">Dates</a>
-                <a href="category.html?type=nuts">Nuts</a>
-                <a href="category.html?type=dry_fruits">Dry Fruits</a>
-                <a href="category.html?type=gifting">Gifting</a>
-                <a href="about.html">Our Story</a>
+            <!-- Mobile Left: Hamburger -->
+            <div class="nav-mobile-left">
+                <button class="icon-btn" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
             </div>
-            <div class="nav-actions">
-                <button class="icon-btn" onclick="toggleSearch()" aria-label="Search">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            
+            <!-- Desktop Left -->
+            <div class="nav-desktop-left">
+                <a href="#" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="about.html" class="nav-link">Our Story</a>
+            </div>
+
+            <!-- Center: Empty (Logo is in background) -->
+            <div style="flex:1;"></div>
+
+            <!-- Desktop Right -->
+            <div class="nav-desktop-right">
+                <a href="category.html" class="nav-link">Categories ▾</a>
+                <button class="icon-btn" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 </button>
-                <a class="icon-btn" href="cart.html" aria-label="Cart">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8h12l1 13H5L6 8Zm3 0V6a3 3 0 0 1 6 0v2"></path></svg>
-                    <span class="cart-count">0</span>
+                <a href="account.html" class="icon-btn" aria-label="Account">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 </a>
-                <button class="icon-btn menu" onclick="toggleMenu()" aria-label="Menu">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <a href="cart.html" class="icon-btn cart-wrapper" aria-label="Cart">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 8h12l1 13H5L6 8Zm3 0V6a3 3 0 0 1 6 0v2"></path></svg>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+
+            <!-- Mobile Right -->
+            <div class="nav-mobile-right">
+                <button class="icon-btn" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 </button>
+                <a href="account.html" class="icon-btn" aria-label="Account">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </a>
+                <a href="cart.html" class="icon-btn cart-wrapper" aria-label="Cart">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 8h12l1 13H5L6 8Zm3 0V6a3 3 0 0 1 6 0v2"></path></svg>
+                    <span class="cart-badge">0</span>
+                </a>
             </div>
         </div>
     </nav>
-    <div id="mobileNav" class="mobile-nav-panel">
-        <button class="search-close" onclick="toggleMenu()" style="position:absolute; top:20px; right:20px;">×</button>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop All</a>
-        <a href="category.html?type=dates">Dates</a>
-        <a href="category.html?type=nuts">Nuts</a>
-        <a href="category.html?type=dry_fruits">Dry Fruits</a>
-        <a href="category.html?type=roasted">Roasted</a>
-        <a href="category.html?type=makhana">Makhana</a>
-        <a href="category.html?type=mixes">Healthy Mixes</a>
-        <a href="category.html?type=gifting">Gifting</a>
-        <a href="about.html">Our Story</a>
-        <a href="contact.html">Contact</a>
-    </div>
-    
-    <div id="searchOverlay" class="search-overlay">
-        <button class="search-close" onclick="toggleSearch()">×</button>
-        <div class="search-input-wrap">
-            <input type="text" id="searchInput" class="search-input" placeholder="Search premium dates, nuts...">
-        </div>
-    </div>
 
-    
+    <!-- Hero Section -->
     <header class="hero">
+        <!-- Mobile Background -->
+        <div class="hero-bg-mobile"></div>
+        <!-- Desktop Background -->
+        <div class="hero-bg-desktop"></div>
+
         <div class="hero-content">
-            <h1 class="hero-title">Nature, Curated Beautifully.</h1>
-            <p class="hero-desc">Premium dates, nuts, dry fruits and wholesome foods — carefully selected for everyday indulgence and meaningful gifting.</p>
-            <div class="hero-actions">
-                <a href="shop.html" class="btn btn-primary">Explore the Collection</a>
-                <a href="#bestsellers" class="btn btn-secondary">Shop Best Sellers</a>
+            <div class="eyebrow">From the heart of Anatolia</div>
+            <h1 class="hero-title">Pure Goodness <span>From Turkey</span></h1>
+            <p class="hero-desc">Carefully selected dates, nuts, dried fruits and natural foods, bringing the rich flavours of Turkey to your table.</p>
+            
+            <a href="shop.html" class="btn btn-primary">Shop Now →</a>
+
+            <!-- Mobile Trust Bar -->
+            <div class="hero-trust-mobile">
+                <div class="trust-item-compact">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2C12 2 4 6 4 12c0 5 4 10 8 10 4 0 8-5 8-10 0-6-8-10-8-10z"></path></svg>
+                    <span>100% Natural</span>
+                </div>
+                <div class="trust-item-compact">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>Premium Quality</span>
+                </div>
+                <div class="trust-item-compact">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    <span>Secure Packaging</span>
+                </div>
+                <div class="trust-item-compact">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    <span>Pan India Delivery</span>
+                </div>
             </div>
         </div>
-        <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f0a?auto=format&fit=crop&q=80&w=1200');"></div>
     </header>
 
-    <section class="categories">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Explore the Goodness</h2>
-                <p class="section-subtitle">From everyday favourites to indulgent discoveries.</p>
-            </div>
-            <div class="category-grid">
-                <div class="category-card" onclick="location.href='category.html?type=dates'">
-                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?auto=format&fit=crop&q=80&w=400" alt="Dates"></div>
-                    <span class="category-title">🌴 Dates</span>
-                </div>
-                <div class="category-card" onclick="location.href='category.html?type=nuts'">
-                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1599598425947-33002620dc06?auto=format&fit=crop&q=80&w=400" alt="Nuts"></div>
-                    <span class="category-title">🥜 Nuts</span>
-                </div>
-                <div class="category-card" onclick="location.href='category.html?type=dry_fruits'">
-                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?auto=format&fit=crop&q=80&w=400" alt="Dry Fruits"></div>
-                    <span class="category-title">🍇 Dry Fruits</span>
-                </div>
-                <div class="category-card" onclick="location.href='category.html?type=roasted'">
-                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1602932371900-514d02636a29?auto=format&fit=crop&q=80&w=400" alt="Roasted"></div>
-                    <span class="category-title">🔥 Roasted</span>
-                </div>
-                <div class="category-card" onclick="location.href='category.html?type=makhana'">
-                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1582283086772-273a3c94595e?auto=format&fit=crop&q=80&w=400" alt="Makhana"></div>
-                    <span class="category-title">🌱 Makhana</span>
-                </div>
-                <div class="category-card" onclick="location.href='category.html?type=mixes'">
-                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1579737829777-62aeb18d616d?auto=format&fit=crop&q=80&w=400" alt="Mixes"></div>
-                    <span class="category-title">💪 Mixes</span>
-                </div>
-                <div class="category-card" onclick="location.href='category.html?type=gifting'">
-                    <div class="category-img-wrap"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=400" alt="Gifting"></div>
-                    <span class="category-title">🎁 Gifting</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Desktop Trust Bar -->
     <section class="trust-bar">
         <div class="container">
-            <h2 class="text-center" style="margin-bottom: 40px; font-size: 2rem;">Pure by Nature. Chosen with Care.</h2>
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <h4>✨ Natural</h4>
-                    <p>Carefully selected ingredients</p>
+            <div class="trust-grid fade-up">
+                <div class="trust-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2C12 2 4 6 4 12c0 5 4 10 8 10 4 0 8-5 8-10 0-6-8-10-8-10z"></path></svg>
+                    <h4>100% Natural</h4>
+                    <p>Pure ingredients, no compromise.</p>
                 </div>
-                <div class="trust-item">
-                    <h4>💧 Pure</h4>
-                    <p>Quality-focused sourcing</p>
+                <div class="trust-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <h4>Premium Quality</h4>
+                    <p>Carefully selected from Turkey.</p>
                 </div>
-                <div class="trust-item">
-                    <h4>🌾 Wholesome</h4>
-                    <p>Made for everyday goodness</p>
+                <div class="trust-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    <h4>Secure Packaging</h4>
+                    <p>Freshness in every order.</p>
                 </div>
-                <div class="trust-item">
-                    <h4>🎁 Thoughtful</h4>
-                    <p>Beautifully curated for gifting</p>
+                <div class="trust-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    <h4>Pan India Delivery</h4>
+                    <p>Bringing goodness to your doorstep.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="bestsellers" class="products-section">
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container text-center fade-up">
+            <div class="eyebrow">Our Collection</div>
+            <h2 class="section-title">Discover Our Range</h2>
+            <p class="section-subtitle">Premium dates, nuts, dried fruits and more — inspired by Turkey, selected for you.</p>
+            
+            <div class="category-grid">
+                <div class="cat-card">
+                    <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?auto=format&fit=crop&q=80&w=600" alt="Dates">
+                    <div class="cat-overlay">
+                        <h3 class="cat-title">Dates</h3>
+                        <p class="cat-desc">Rich & Naturally Sweet</p>
+                    </div>
+                    <div class="cat-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                </div>
+                <div class="cat-card">
+                    <img src="https://images.unsplash.com/photo-1599598425947-33002620dc06?auto=format&fit=crop&q=80&w=600" alt="Nuts">
+                    <div class="cat-overlay">
+                        <h3 class="cat-title">Nuts</h3>
+                        <p class="cat-desc">Pure & Wholesome</p>
+                    </div>
+                    <div class="cat-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                </div>
+                <div class="cat-card">
+                    <img src="https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?auto=format&fit=crop&q=80&w=600" alt="Dried Fruits">
+                    <div class="cat-overlay">
+                        <h3 class="cat-title">Dried Fruits</h3>
+                        <p class="cat-desc">Naturally Nourishing</p>
+                    </div>
+                    <div class="cat-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                </div>
+                <div class="cat-card">
+                    <img src="https://images.unsplash.com/photo-1579737829777-62aeb18d616d?auto=format&fit=crop&q=80&w=600" alt="Nut Mixes">
+                    <div class="cat-overlay">
+                        <h3 class="cat-title">Nut Mixes</h3>
+                        <p class="cat-desc">Perfectly Balanced</p>
+                    </div>
+                    <div class="cat-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                </div>
+                <div class="cat-card">
+                    <img src="https://images.unsplash.com/photo-1541832060-639a08e13637?auto=format&fit=crop&q=80&w=600" alt="Turkish Specials">
+                    <div class="cat-overlay">
+                        <h3 class="cat-title">Turkish Specials</h3>
+                        <p class="cat-desc">Authentic Flavours</p>
+                    </div>
+                    <div class="cat-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                </div>
+                <div class="cat-card">
+                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=600" alt="Gift Packs">
+                    <div class="cat-overlay">
+                        <h3 class="cat-title">Gift Packs</h3>
+                        <p class="cat-desc">Perfect for Every Occasion</p>
+                    </div>
+                    <div class="cat-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bestsellers Section -->
+    <section class="bestsellers-section">
+        <div class="container text-center fade-up">
+            <div class="eyebrow">Bestsellers</div>
+            <h2 class="section-title">Customer Favourites</h2>
+            <p class="section-subtitle">Loved for their taste, quality and natural goodness.</p>
+            
+            <div class="product-grid">
+                <!-- Example Product 1 -->
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f0a?auto=format&fit=crop&q=80&w=600" class="product-img" alt="Medjool Dates">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Medjool Dates</h3>
+                        <p class="product-desc">Premium Quality</p>
+                        <div class="product-price">₹899</div>
+                        <div class="product-weight">250g</div>
+                        <button class="btn-add">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Example Product 2 -->
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <img src="https://images.unsplash.com/photo-1599598425947-33002620dc06?auto=format&fit=crop&q=80&w=600" class="product-img" alt="California Almonds">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">California Almonds</h3>
+                        <p class="product-desc">Crisp & Crunchy</p>
+                        <div class="product-price">₹499</div>
+                        <div class="product-weight">250g</div>
+                        <button class="btn-add">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Example Product 3 -->
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <img src="https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?auto=format&fit=crop&q=80&w=600" class="product-img" alt="Turkish Figs">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Dried Turkish Figs</h3>
+                        <p class="product-desc">Naturally Sweet</p>
+                        <div class="product-price">₹649</div>
+                        <div class="product-weight">250g</div>
+                        <button class="btn-add">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Example Product 4 -->
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <img src="https://images.unsplash.com/photo-1579737829777-62aeb18d616d?auto=format&fit=crop&q=80&w=600" class="product-img" alt="Daily Mix">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Daily Energy Mix</h3>
+                        <p class="product-desc">Nutritious Blend</p>
+                        <div class="product-price">₹599</div>
+                        <div class="product-weight">250g</div>
+                        <button class="btn-add">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Turkish Specials Section -->
+    <section class="specials-section fade-up">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">The SK TABII Edit</h2>
-                <p class="section-subtitle">Our most-loved selection of premium natural goodness.</p>
-            </div>
-            <div id="bestsellers-grid" class="product-grid">
-                <!-- Products rendered via JS -->
-            </div>
-            <div class="text-center" style="margin-top: 40px;">
-                <a href="shop.html" class="btn btn-secondary">View All Products</a>
+            <div class="eyebrow">Exclusive Collection</div>
+            <h2 class="section-title">A Taste of Turkey</h2>
+            <p class="section-subtitle">Discover premium dates, nuts and dried fruits inspired by the rich food traditions of Turkey.</p>
+            <a href="shop.html" class="btn btn-outline">Shop The Collection →</a>
+        </div>
+    </section>
+
+    <!-- Brand Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid fade-up">
+                <div class="story-content">
+                    <div class="eyebrow">The Story Behind SK TABII</div>
+                    <h2 class="section-title">A Journey Inspired by Turkey</h2>
+                    <h3 class="section-subtitle" style="font-weight:500;">From the heart of Anatolia to your table.</h3>
+                    <p>SK TABII was born from a simple belief: the finest natural foods should be accessible, carefully sourced, and beautifully presented.</p>
+                    <p>We travel the world to find the most premium dates, nuts, and dry fruits. Our commitment to quality means we only select the best.</p>
+                    <a href="about.html" class="btn btn-primary" style="margin-top: 20px;">Read Our Story →</a>
+                </div>
+                <div class="story-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1600188998952-475a13348006?auto=format&fit=crop&q=80&w=800" class="story-img" alt="SK TABII Story">
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="feature-section feature-dark">
-        <div class="feature-content">
-            <h2 class="section-title">The Art of the Date</h2>
-            <p class="hero-desc" style="color: rgba(250,248,245,0.8)">From soft Medjool to revered Ajwa, discover carefully selected dates chosen for their flavour, texture and character.</p>
-            <div>
-                <a href="category.html?type=dates" class="btn btn-secondary">Explore Dates</a>
+    <!-- Gifting Section -->
+    <section class="gifting-section">
+        <div class="container">
+            <div class="gifting-grid fade-up">
+                <div class="story-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=800" class="story-img" alt="Gifting" style="border-radius: 20px;">
+                </div>
+                <div class="story-content text-center">
+                    <h2 class="section-title">Perfect for Every Occasion</h2>
+                    <p>Thoughtfully curated gift packs for the people who matter.</p>
+                    <a href="category.html?type=gifting" class="btn btn-primary" style="margin-top: 20px;">View Gift Packs →</a>
+                </div>
             </div>
         </div>
-        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1603569283847-aa295f0d016a?auto=format&fit=crop&q=80&w=1200');"></div>
     </section>
 
-    <section class="feature-section reverse">
-        <div class="feature-content" style="background-color: var(--mint-cream);">
-            <h2 class="section-title">Gifts That Feel Thoughtful</h2>
-            <p class="hero-desc">Curated boxes filled with premium natural goodness. Discover everyday gifts, premium hampers, and corporate gifting.</p>
-            <div>
-                <a href="category.html?type=gifting" class="btn btn-primary">Explore Gifting</a>
-            </div>
+    <!-- Final CTA -->
+    <section class="final-cta fade-up">
+        <div class="container text-center">
+            <h2 class="section-title" style="color: var(--dark-chocolate);">Good Food Brings People Closer.</h2>
+            <p class="section-subtitle" style="color: var(--deep-chocolate); max-width: 600px; margin: 0 auto 40px; font-weight: 500;">Discover naturally good products, carefully selected and beautifully presented.</p>
+            <a href="shop.html" class="btn btn-primary">Explore The Collection →</a>
         </div>
-        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=1200');"></div>
     </section>
 
-    
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h2 class="logo-text" style="color: var(--warm-cream); margin-bottom: 20px;">SK TABII</h2>
-                    <p style="color: rgba(250,248,245,0.7); margin-bottom: 20px; max-width: 300px;">Premium Dates, Nuts, Dry Fruits & Natural Foods. Rooted in Nature. Made for Today.</p>
+                    <h2 style="color: var(--warm-cream); font-family: var(--font-heading); font-size: 2rem; margin-bottom: 20px;">SK TABII</h2>
+                    <p style="color: rgba(250,248,245,0.7); line-height: 1.8; max-width: 300px;">Premium Dates, Nuts, Dry Fruits & Natural Foods. Inspired by Turkey, rooted in nature.</p>
                 </div>
                 <div class="footer-col">
                     <h3>Shop</h3>
                     <ul class="footer-links">
-                        <li><a href="category.html?type=dates">Dates</a></li>
-                        <li><a href="category.html?type=nuts">Nuts</a></li>
-                        <li><a href="category.html?type=dry_fruits">Dry Fruits</a></li>
-                        <li><a href="category.html?type=roasted">Roasted</a></li>
-                        <li><a href="category.html?type=makhana">Makhana</a></li>
-                        <li><a href="category.html?type=mixes">Healthy Mixes</a></li>
-                        <li><a href="category.html?type=gifting">Gifting</a></li>
+                        <li><a href="#">All Products</a></li>
+                        <li><a href="#">Dates</a></li>
+                        <li><a href="#">Nuts</a></li>
+                        <li><a href="#">Dried Fruits</a></li>
+                        <li><a href="#">Nut Mixes</a></li>
+                        <li><a href="#">Turkish Specials</a></li>
+                        <li><a href="#">Gift Packs</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>About</h3>
                     <ul class="footer-links">
-                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">About SK TABII</a></li>
                         <li><a href="#">Quality</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-col newsletter">
-                    <h3>A Little Goodness, Delivered.</h3>
-                    <p style="color: rgba(250,248,245,0.7); font-size: 0.9rem; margin-bottom: 15px;">Be the first to discover new collections and special offers.</p>
-                    <form onsubmit="event.preventDefault(); alert('Subscribed!');">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" class="btn btn-accent">Join SK TABII</button>
-                    </form>
+                <div class="footer-col">
+                    <h3>Help</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -217,6 +358,31 @@
         </div>
     </footer>
 
-    <script src="app.js"></script>
+    <!-- Scripts -->
+    <script>
+        // Scroll behavior for nav
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            
+            // Fade up animations
+            const elements = document.querySelectorAll('.fade-up');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight * 0.85) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+        
+        // Trigger initial fade up
+        setTimeout(() => {
+            window.dispatchEvent(new Event('scroll'));
+        }, 100);
+    </script>
 </body>
 </html>
