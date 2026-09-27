@@ -231,9 +231,9 @@ a {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-image: url('images/bg-mobile.jpg');
+    background-image: url('images/hero-bg.jpg');
     background-size: cover;
-    background-position: center top;
+    background-position: center;
 }
 
 .hero-content {
@@ -300,11 +300,6 @@ a {
 }
 
 @media (min-width: 1024px) {
-    .hero {
-        background-image: url('images/bg-desktop.jpg');
-        background-position: center;
-    }
-    
     .hero-content {
         margin-top: 0;
         text-align: left;
