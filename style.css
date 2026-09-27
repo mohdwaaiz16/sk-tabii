@@ -231,31 +231,9 @@ a {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-}
-
-.hero-bg-mobile {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-image: url('images/bg-mobile.jpg');
     background-size: cover;
     background-position: center top;
-    z-index: 1;
-}
-
-.hero-bg-desktop {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/bg-desktop.jpg');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
 }
 
 .hero-content {
@@ -322,8 +300,10 @@ a {
 }
 
 @media (min-width: 1024px) {
-    .hero-bg-mobile { display: none; }
-    .hero-bg-desktop { display: block; }
+    .hero {
+        background-image: url('images/bg-desktop.jpg');
+        background-position: center;
+    }
     
     .hero-content {
         margin-top: 0;
