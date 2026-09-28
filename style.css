@@ -218,7 +218,7 @@ a {
     .nav-overlay { top: 40px; } /* Below announcement bar */
     .nav-overlay.scrolled { top: 0; }
     .nav-desktop-left, .nav-desktop-right { display: flex; }
-    .nav-mobile-left { display: none; }
+    .nav-mobile-left, .nav-mobile-right { display: none; }
 }
 
 /* Hero Section */
