@@ -241,7 +241,7 @@ a {
     z-index: 10;
     width: 100%;
     padding: 0 20px;
-    margin-top: 45vh; /* Push content down below the logo in the background */
+    margin-top: 55vh; /* Push content down below the logo in the background */
     text-align: center;
 }
 
@@ -301,7 +301,7 @@ a {
 
 @media (min-width: 1024px) {
     .hero-content {
-        margin-top: 35vh; /* Adjust for desktop to sit under logo */
+        margin-top: 45vh; /* Adjust for desktop to sit under logo */
         text-align: center;
         max-width: 600px;
         margin-left: auto;
