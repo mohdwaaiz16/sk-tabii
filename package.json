@@ -1,0 +1,29 @@
+{
+  "name": "sk-tabii",
+  "version": "1.0.0",
+  "description": "Premium natural foods demo website built for MW Zawion.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohdwaaiz16/sk-tabii.git"
+  },
+  "keywords": [
+    "ecommerce",
+    "dates",
+    "nuts",
+    "dry-fruits",
+    "natural-foods"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohdwaaiz16/sk-tabii/issues"
+  },
+  "homepage": "https://github.com/mohdwaaiz16/sk-tabii#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
